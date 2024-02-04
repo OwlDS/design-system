@@ -1,0 +1,24 @@
+{
+  "name": "@owl/web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src --format esm,cjs --dts",
+    "dev": "tsup src --format esm,cjs --dts --watch"
+  },
+  "keywords": [],
+  "author": "LeandrodeLimaC",
+  "license": "ISC",
+  "devDependencies": {
+    "@lit-labs/gen-wrapper-react": "^0.3.1",
+    "tslib": "^2.6.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "lit": "^3.1.0"
+  }
+}

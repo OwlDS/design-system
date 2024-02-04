@@ -1,0 +1,4 @@
+{
+  "extends": "@owl/typescript-config/wc-library.json",
+  "exclude": ["./dist", "node_modules", "tsup.config.ts"]
+}
