@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./components\""
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./Button\""
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/Button/Button.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "buttonStyles",
+          "default": "css`\n\t:host {\n\t\tcolor: blue;\n\t}\n\n\tbutton {\n\t\tborder-radius: 8px;\n\t\tborder: 1px solid transparent;\n\t\tpadding: 0.6em 1.2em;\n\t\tfont-size: 1em;\n\t\tfont-weight: 500;\n\t\tfont-family: inherit;\n\t\tbackground-color: #1a1a1a;\n\t\tcursor: pointer;\n\t\ttransition: border-color 0.25s;\n\t\tcolor: white;\n\t}\n\n\tbutton:hover {\n\t\tborder-color: #646cff;\n\t}\n\n\tbutton:focus,\n\tbutton:focus-visible {\n\t\toutline: 4px auto -webkit-focus-ring-color;\n\t}\n`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "buttonStyles",
+          "declaration": {
+            "name": "buttonStyles",
+            "module": "src/components/Button/Button.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/Button/Button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A custom element that fires event on value change.",
+          "name": "Button",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Labelaaaa of the component"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Event fired when value is changed",
+              "name": "click"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "owl-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Button",
+          "declaration": {
+            "name": "Button",
+            "module": "src/components/Button/Button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/Button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Button",
+          "declaration": {
+            "name": "Button",
+            "module": "./Button"
+          }
+        }
+      ]
+    }
+  ]
+}
