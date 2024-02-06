@@ -6,19 +6,23 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
+    "analyze": "cem analyze --litelement",
     "build": "tsup src --format esm,cjs --dts",
-    "dev": "tsup src --format esm,cjs --dts --watch"
+    "dev": "yarn analyze -- --exclude dist && tsup src --format esm,cjs --dts --watch"
   },
   "keywords": [],
   "author": "LeandrodeLimaC",
   "license": "ISC",
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.17",
     "@lit-labs/gen-wrapper-react": "^0.3.1",
+    "concurrently": "^5.3.0",
     "tslib": "^2.6.2",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "lit": "^3.1.0"
-  }
+  },
+  "customElements": "custom-elements.json"
 }
