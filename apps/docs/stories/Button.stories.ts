@@ -1,28 +1,16 @@
-import { TemplateResult, html } from "lit";
+import type { Meta, StoryObj} from '@storybook/web-components'
 import "@owl/web"
 
-export default {
+const meta: Meta = {
   title: 'Forms/Button',
-  argTypes: {
-    label: { control: 'text' },
-  },
+  component: 'owl-button',
 };
 
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
+export default meta;
+type Story = StoryObj;
+
+export const Overview: Story = {
+  args: {
+    label: 'Overview',
+  }
 }
-
-interface ArgTypes {
-  label?: string;
-}
-
-const Template: Story<ArgTypes> = ({ label }) => html`
-  <owl-button label='${label}'/>
-`;
-
-export const Overview = Template.bind({});
-Overview.args = {
-  label: 'Button A',
-};
