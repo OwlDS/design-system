@@ -14,7 +14,7 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-  ],
+  ], 
   framework: {
     name: getAbsolutePath("@storybook/web-components-vite"),
     options: {},
@@ -22,15 +22,24 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
-  async viteFinal(config, { configType }) {
-		// customize the Vite config here
-		config.optimizeDeps.include = [
-			...(config.optimizeDeps?.include ?? []),
-			'@storybook/web-components',
-		]
-		config.optimizeDeps.exclude = [...(config.optimizeDeps?.exclude ?? []), 'lit', 'lit-html']
+  async viteFinal(config) {
+    const include =  [
+      ...(config.optimizeDeps?.include ?? []),
+      '@storybook/web-components',
+    ]
 
-		// return the customized config
+    const exclude = [
+      ...(config.optimizeDeps?.exclude ?? []), 
+      'lit-html',
+      'lit', 
+    ]
+
+    config.optimizeDeps = {
+      ...config.optimizeDeps,
+      include,
+      exclude,
+    }
+    
 		return config
 	},
 };
